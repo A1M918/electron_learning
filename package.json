@@ -1,15 +1,36 @@
 {
   "name": "first_app",
   "version": "1.0.0",
-  "description": "",
+  "description": "this is a test app",
   "main": "main.js",
   "scripts": {
     "start": "electron .",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "electron:watch": "nodemon --watch * --exec electron ."
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
     "electron": "^7.1.3"
+  },
+  "dependencies": {
+    "material-design-lite": "^1.3.0"
+  },
+  "build": {
+    "appId": "test123",
+    "mac": {
+      "category": "first_app.test.learning"
+    },
+    "win": {
+      "target": [
+        {
+          "target": "nsis",
+          "arch": [
+            "x64",
+            "ia32"
+          ]
+        }
+      ]
+    }
   }
 }
